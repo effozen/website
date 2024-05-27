@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'node:latest' // 최신 Node.js가 포함된 Docker 이미지 사용
+            image 'node:latest'
             args '-u root:root' // 루트 사용자로 실행
         }
     }
