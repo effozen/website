@@ -23,7 +23,7 @@ const Navbar = ({currentMenu}) => {
           {/* 메뉴2 */}
           <div className='hidden md:flex space-x-3'>
             {menu.map(v => (
-              <Link to="#" className="flex items-center py-5 px-2 text-gray-700" key={v}>
+              <Link to={`/${v.replace(/\s+/g, '').toLowerCase()}`} className="flex items-center py-5 px-2 text-gray-700" key={v}>
                 <span
                   className={`text-lg font-normal py-5 px-3 text-gray-700 hover:text-gray-900 ${v === currentMenu ? 'underline underline-offset-8' : ''}`}>
                   {v}
@@ -55,7 +55,7 @@ const Navbar = ({currentMenu}) => {
         {/* 모바일 메뉴 아이템 */}
         <div className={classNames('md:hidden', {hidden: !menuToggle})}>
           {menu.map(v => (
-            <Link to="#" className="block py-2 px-4 text-sm hover:bg-gray-200" key={`mobile_${v}`}>{v}</Link>
+            <Link to={`/${v.replace(/\s+/g, '').toLowerCase()}`} className="block py-2 px-4 text-sm hover:bg-gray-200" key={`mobile_${v}`}>{v}</Link>
           ))}
         </div>
 
