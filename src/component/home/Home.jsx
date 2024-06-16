@@ -2,6 +2,7 @@ import Navbar from "../header/Navbar";
 import card from "../../utils/imgs/cardimg.png";
 import lim from "../../utils/imgs/lim_img1.jpeg";
 import choi from "../../utils/imgs/choi_img1.png";
+import army from '../../utils/imgs/army_img1.jpeg';
 import './Home.css'; // CSS 파일을 추가로 import
 
 const Home = () => {
@@ -27,7 +28,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="basis-1/2 flex flex-col items-center bg-blue">
+        <div className="basis-1/2 flex flex-col items-center bg-blue h-screen overflow-y-auto">
           <div className="text-6xl font-semibold mt-16 w-11/12 flex justify-start ">
             <span className="text-[#1539CB]">SOL</span>깃한 낭만여행
           </div>
@@ -59,7 +60,7 @@ const Home = () => {
           <div className="px-10 w-full mt-2 bg-white">
             <div className='max-w-xl flex justify-start py-2 space-x-5'>
               <div>
-                <img src={lim} alt="" className='h-40 w-64 object-cover object-center'/>
+                <img src={army} alt="" className='h-40 w-64 object-cover object-center'/>
               </div>
               <div className="text-4xl flex flex-col justify-center items-start font-semibold">
                 <div><span className="text-[#4C7DFF]">선후임</span>으로 만나</div>
@@ -69,6 +70,13 @@ const Home = () => {
             </div>
           </div>
 
+          <div className='w-full h-72 flex justify-center items-center my-6'>
+            <div className="text-5xl flex flex-col justify-center items-center font-semibold space-y-2">
+              <div><span className="text-[#4C7DFF]">특별한 추억</span>을</div>
+              <div>조금은 <span className="text-[#1539CB]">독특한 방법</span>으로</div>
+              <div><span className="text-[#4C7DFF]">남겨보고자</span>합니다</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
