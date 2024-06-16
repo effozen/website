@@ -1,6 +1,7 @@
 import symbol from '../../utils/imgs/symbol_black.png';
 import classNames from "classnames";
 import {useState} from "react";
+import {Link} from "react-router-dom";
 
 const Navbar = ({currentMenu}) => {
   const [menuToggle, setMenuToggle] = useState(false);
@@ -14,20 +15,20 @@ const Navbar = ({currentMenu}) => {
 
           {/* 메뉴 */}
           <div>
-            <a href="#" className='flex items-center py-5 px-2 text-gray-700'>
+            <Link to="/" className='flex items-center py-5 px-2 text-gray-700'>
               <img src={symbol} alt="symbol" className='w-9 h-9'/>
-            </a>
+            </Link>
           </div>
 
           {/* 메뉴2 */}
           <div className='hidden md:flex space-x-3'>
             {menu.map(v => (
-              <a href="#" className="flex items-center py-5 px-2 text-gray-700" key={v}>
+              <Link to="#" className="flex items-center py-5 px-2 text-gray-700" key={v}>
                 <span
                   className={`text-lg font-normal py-5 px-3 text-gray-700 hover:text-gray-900 ${v === currentMenu ? 'underline underline-offset-8' : ''}`}>
                   {v}
                 </span>
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -54,7 +55,7 @@ const Navbar = ({currentMenu}) => {
         {/* 모바일 메뉴 아이템 */}
         <div className={classNames('md:hidden', {hidden: !menuToggle})}>
           {menu.map(v => (
-            <a href="#" className="block py-2 px-4 text-sm hover:bg-gray-200" key={`mobile_${v}`}>{v}</a>
+            <Link to="#" className="block py-2 px-4 text-sm hover:bg-gray-200" key={`mobile_${v}`}>{v}</Link>
           ))}
         </div>
 
