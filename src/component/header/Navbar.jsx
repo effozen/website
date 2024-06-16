@@ -7,7 +7,7 @@ const Navbar = ({currentMenu}) => {
   const menu = ['Home', 'About Us', 'Plan', 'Travel', 'Record'];
 
   return (
-    <nav>
+    <nav className="fixed top-0 left-0 right-0 z-50">
       <div className="h-16 max-w-7xl mx-auto px-3">
 
         <div className="h-16 flex justify-between items-center">
