@@ -29,49 +29,49 @@ const Carousel = () => {
     {
       img: kansai,
       day: '1일차',
-      date: '2024년 07월 11일',
+      date: '2024년 08월 11일',
       message: '오사카데스카~~!'
     },
     {
       img: yamasaki,
       day: '2일차',
-      date: '2024년 07월 12일',
+      date: '2024년 08월 12일',
       message: '일본술? 뭐가 그리 대단한데??'
     },
     {
       img: kuhokusi,
       day: '3일차',
-      date: '2024년 07월 13일',
+      date: '2024년 08월 13일',
       message: '보세보세 역사를 보세!'
     },
     {
       img: akihabara,
       day: '4일차',
-      date: '2024년 07월 14일',
+      date: '2024년 08월 14일',
       message: '안녕 도쿄!'
     },
     {
       img: sibuya,
       day: '5일차',
-      date: '2024년 07월 15일',
+      date: '2024년 08월 15일',
       message: '시부야에서 나도 패션왕!'
     },
     {
       img: disney,
       day: '6일차',
-      date: '2024년 07월 16일',
+      date: '2024년 08월 16일',
       message: '디즈니월드 속으로! 나도 주인공!'
     },
     {
       img:enoshima,
       day: '7일차',
-      date: '2024년 07월 17일',
+      date: '2024년 08월 17일',
       message: '안선생님.. 농구가 하고 싶어요..!'
     },
     {
       img:incheon,
       day: '8일차',
-      date: '2024년 07월 18일',
+      date: '2024년 08월 18일',
       message: '굿바이 일본! 헬로우 한국!'
     },
   ];
