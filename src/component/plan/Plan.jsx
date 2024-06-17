@@ -2,6 +2,7 @@ import './plan.scss';
 import Navbar from "../header/Navbar";
 import styled from "styled-components";
 import Carousel from "./Carousel";
+import PlanBox from "./PlanBox";
 
 const StyledTitle = styled.div`
   font-size: 2.5rem;
@@ -29,9 +30,8 @@ const Plan = () => {
         <StyledTitle>
           <span className='text-[#1539CB]'>SOL</span>깃한 여행계획
         </StyledTitle>
-        <div className='bg-white w-full h-full'>
-          d
-        </div>
+        <PlanBox>
+        </PlanBox>
       </main>
     </div>
   );
