@@ -1,18 +1,17 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import React, {Component} from "react";
+import React, {Component, useEffect, useState} from "react";
 import Slider from "react-slick";
+import {requestGet} from "../../utils/network/Communicate";
+import axios from 'axios';
 
-import akihabara from './imgs/akihabara.webp';
-import disney from './imgs/disney.webp';
-import enoshima from './imgs/enoshima.jpeg';
-import incheon from './imgs/incheon.jpeg';
-import kansai from './imgs/kansai.webp';
-import kuhokusi from './imgs/kuhokusi.jpeg';
-import sibuya from './imgs/sibuya.jpeg';
-import yamasaki from './imgs/yamasaki.webp';
+
 
 const Carousel = () => {
+  const [summary, setSummary] = useState([]);
+  const [plan, setPlan] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   const settings = {
     // className: "slider variable-width",
     dots: false,
@@ -25,51 +24,76 @@ const Carousel = () => {
     autoplaySpeed: 2000
   };
 
+  useEffect(() => {
+    const fetchSummary = async () => {
+      try {
+        const response = await axios.get('http://effozen.com/api/project/shinhan/get_summary');
+        setSummary(response.data);
+      } catch (error) {
+        console.error('Error fetching summary data:', error);
+      }
+    };
+
+    const fetchPlan = async () => {
+      try {
+        const response = await axios.get('http://effozen.com/api/project/shinhan/get_plan');
+        setPlan(response.data);
+      } catch (error) {
+        console.error('Error fetching plan data:', error);
+      }
+    };
+
+    fetchSummary();
+    fetchPlan();
+    setLoading(false);
+  }, []);
+
+
   const carouselData = [
     {
-      img: kansai,
+      img: 'https://i.postimg.cc/hPc7xvN9/kansai.webp',
       day: '1일차',
       date: '2024년 08월 11일',
       message: '오사카데스카~~!'
     },
     {
-      img: yamasaki,
+      img: 'https://i.postimg.cc/zG3vSg7R/yamasaki.webp',
       day: '2일차',
       date: '2024년 08월 12일',
       message: '일본술? 뭐가 그리 대단한데??'
     },
     {
-      img: kuhokusi,
+      img: 'https://i.postimg.cc/sXPgD9jb/kuhokusi.jpg',
       day: '3일차',
       date: '2024년 08월 13일',
       message: '보세보세 역사를 보세!'
     },
     {
-      img: akihabara,
+      img: 'https://i.postimg.cc/1RH3kHYq/akihabara.webp',
       day: '4일차',
       date: '2024년 08월 14일',
       message: '안녕 도쿄!'
     },
     {
-      img: sibuya,
+      img: 'https://i.postimg.cc/dtVVwyzS/sibuya.jpg',
       day: '5일차',
       date: '2024년 08월 15일',
       message: '시부야에서 나도 패션왕!'
     },
     {
-      img: disney,
+      img: 'https://i.postimg.cc/dVzs2SDz/disney.webp',
       day: '6일차',
       date: '2024년 08월 16일',
       message: '디즈니월드 속으로! 나도 주인공!'
     },
     {
-      img:enoshima,
+      img:'https://i.postimg.cc/sXz38QYm/enoshima.jpg',
       day: '7일차',
       date: '2024년 08월 17일',
       message: '안선생님.. 농구가 하고 싶어요..!'
     },
     {
-      img:incheon,
+      img:'https://i.postimg.cc/TwcTXdQ6/incheon.jpg',
       day: '8일차',
       date: '2024년 08월 18일',
       message: '굿바이 일본! 헬로우 한국!'
