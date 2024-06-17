@@ -9,6 +9,8 @@ const ContentRouter = () => {
         <Route path='/'>
           <Route path='' element={<Home/>} />
           <Route path='home' element={<Home/>} />
+          <Route path='aboutus' element={<Home/>} />
+          <Route path='record' element={<Home/>} />
         </Route>
         <Route path='plan'>
           <Route path='' element={<Plan />}></Route>
