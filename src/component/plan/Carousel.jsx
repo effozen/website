@@ -80,7 +80,6 @@ const Carousel = () => {
     <div className="slider-container bg-white">
       <Slider {...settings}>
         {carouselData.map(v => {
-          console.log(v);
           return (
             <div key={`${v.data}_${v.message}`} className="flex flex-col w-80 p-3">
               <img src={v.img} alt="img" className="w-64 h-64 object-cover object-center"/>
